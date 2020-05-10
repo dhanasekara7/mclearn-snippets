@@ -44,6 +44,15 @@ axes[0, 0].plot(sin)
 axes[0, 1].plot(sin, c='r')
 
 
+# some more comparisions
+plt.title => ax.set_title
+plt.xlim, plt.ylim => ax.set_xlim, ax.set_ylim
+plt.xlabel, plt.ylabel => ax.set_xlabel, ax.set_ylabel 
+plt.xticks, plt.yticks => ax.set_xticks, ax.set_yticks
+                          (& ax.set_xtick_labels )
+
+ax = plt.gca() # get current axes
+fig = plt.gcf() # get current figure
 
 
 ```
