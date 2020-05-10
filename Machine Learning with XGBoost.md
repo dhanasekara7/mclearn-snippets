@@ -19,7 +19,7 @@ len(data[data.isnull().any(axis=1)])
 
 data = data.dropna()
 
-X = data.drop('Survived', axis=1)
+X = data.drop('Survived', ax    is=1)
 y = data['Survived']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, randomsize=42)
