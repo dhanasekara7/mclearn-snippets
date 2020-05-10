@@ -55,4 +55,7 @@ ax = plt.gca() # get current axes
 fig = plt.gcf() # get current figure
 
 
+# https://matplotlib.org/gallery.html
+# https://matplotlib.org/api/pyplot_summary.html
+
 ```
