@@ -81,4 +81,21 @@ np.mean(res), res.std()
 # ShuffleSplit --> repeatedly sample a test with replacement
 # RepeatedKFold --> apply KFold or StartifiedKFold multiple times with shuffled data.
 
+# using cross validation generator
+from sklearn.model_selection import KFold, StartifiedKFold, ShuffleSplit, RepeatedStartifiedKFold
+kfold = KFold(n_splits=5)
+skfold = StartifiedKFold(n_splits=5,shuffle=True)
+ss = ShuffleSplit(n_splits = 20, train_size=0.4, test_size=0.3)
+rs = RepeatedStartifiedKFold(n_splits=5, n_repeats=10)
+
+print(cross_val_score(KneighborsClassifier(), X, y, cv=kfold))
+print(cross_val_score(KneighborsClassifier(), X, y, cv = skfold))
+print(cross_val_score(KneighborsClassifier(), X, y, cv = ss))
+print(cross_val_score(KneighborsClassifier(), X, y, cv = rs))
+
+# cross_validate_function
+from sklearn.model_selection import cross_validate
+res = cross_validate(KneighborsClassifier(), X, y, return_train_score=True,scoring=["accuracy", "roc_auc"])
+res_df = pd.DataFrame(res)
+
 ```
