@@ -58,4 +58,22 @@ fig = plt.gcf() # get current figure
 # https://matplotlib.org/gallery.html
 # https://matplotlib.org/api/pyplot_summary.html
 
+#some plot styles
+# why? y,x and x,y...angry
+# fig, ax = plt.subplot(y,x , figsize=(x,y))
+ 
+# scatter -> 'o'
+# curve red -> c='r'
+# dashed line -> '--'
+# line width -> lw=3
+# scatter and dashed --> '--o'
+
+# make stuff fit, ususally works
+plt.tight_layout()
+
+
+ax[0].plot(x, y, 'o')
+ax[1].scatter(x, y)
+ax[2].scatter(x, y, c=x-y, cmap='bwr', edgecolor='k')
+ax[3].scatter(x, y, c=x-y, s=sizes, cmap='bwr', edgecolor='k')
 ```
